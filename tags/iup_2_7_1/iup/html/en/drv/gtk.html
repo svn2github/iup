@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<title>GTK</title>
+<link rel="stylesheet" type="text/css" href="../../style.css">
+<style type="text/css">
+.style1 {
+	font-size: large;
+}
+</style>
+</head>
+<body>
+
+<h2>GTK System Driver<span class="style1"> (since 3.0)</span></h2>
+<p>This driver was designed for the GTK+ 
+  version 2. It can be compiled in Windows or UNIX.</p>
+<p>Although GTK has layout elements they are not used. IUP fill, vbox, hbox and 
+zbox containers are implemented independent from the native system.</p>
+<p>The oldest GTK version that can be used is 2.4, oldest versions will not 
+compile. But using versions older than 2.10 several features will not work. 
+Critical features need at least version 2.6.</p>
+<p>Currently it is not available for IRIX, AIX and SunOS. But is it available 
+for SunOS10 and it is not available for Linux24.</p>
+<h3>Tips</h3>
+<p>The GTK driver can be compiled and used in Windows, but it is not recomended since it is slower and 
+much more memory 
+  consuming than the IUP native Windows driver.</p>
+<p>GTK uses UTF-8 as its charset for all displayed text, so IUP will 
+automatically convert all strings to (SetAttribute) and from (GetAttribute) 
+UTF-8. To use UTF-8 strings set the global attribute UTF8AUTOCONVERT to NO.</p>
+<p>When using DLLs in Windows, the &quot;iup.dll&quot; uses the Win32 driver. So 
+applications that dynamically load IUP will always use the &quot;iup.dll&quot;, for 
+example Lua using require. To use the IUP GTK dll in Windows you must rename the 
+&quot;iupgtk.dll&quot; to &quot;iup.dll&quot;, so the GTK driver will be loaded instead of the Win32 
+driver.</p>
+
+</body>
+
+</html>
