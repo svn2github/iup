@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+
+  <meta http-equiv="Content-Language" content="en-us">
+
+
+  <title>To Do</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+
+  <style type="text/css">
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style2 {
+	color: #008000;
+	font-weight: bold;
+}
+.style3 {
+	font-weight: bold;
+}
+  .style5 {
+	font-weight: normal;
+}
+  </style>
+</head>
+
+
+<body>
+
+
+<h2 align="center">To Do</h2>
+
+<h3>Roadmap for the Next Version</h3>
+
+<ol>
+	<li>MacOSX using GTK</li>
+	<li>SORT for <strong>IupList</strong></li>
+	<li><strong>IupSplitbox</strong> (IupSbox nativo)</li>
+	<li>Other New Controls: <strong>DropDownButton, GridBox, ScrollBox</strong> 
+	and <strong>LayoutBuilder</strong>.</li>
+	<li>Drag&amp;Drop</li>
+	<li>Tutorial and Demo</li>
+	<li>[Sugestions?]</li>
+</ol>
+
+<h3>General</h3>
+
+<ul>
+
+	<li><span class="style2">Priority: </span>Build a MacOS X version using the new GTK Darwin native framework. This 
+	implicates in a CD using GDK/Cairo or using Quartz 2D.</li>
+
+	<li><span class="style2">Priority: </span>Drag&amp;Drop between controls.</li>
+
+	<li><span class="style2">Priority: </span>A tutorial section in the documentation. One big Controls Demo just like 
+	GTK, wxWidgets and Qt have.</li>
+	<li><span class="style2">Priority: </span>SORT action attribute for <strong>IupList</strong>.</li>
+
+	<li>A MacOS X native driver using Carbon.</li>
+
+  <li>The actual model for control data structure in the internal SDK is limited and hard to use for derived classes.</li>
+
+	<li>Unicode Support (UTF-8) in Windows and Motif.</li>
+
+	<li>Simplify IupLua implementation. More similar to a regular 
+	binding implementation like CDLua and IMLua.</li>
+
+	<li>Define and control keyboard navigation in "Tab" groups.</li>
+
+	<li>Add support for loadind and saving RTF files in 
+	<strong>IupText</strong>. 
+	Add support for images inside the text.</li>
+
+	<li>Support for text over image in <strong>IupLabel</strong>,
+	<strong>IupButton</strong> and <strong>IupToggle</strong>. Or a way to 
+	composte text on <strong>IupImage</strong>.</li>
+
+	<li>Support for changing the system menu in Windows. Support 
+	for cascading <strong>IupPopup</strong> for menus.</li>
+	<li><span class="style1">Known Issue:</span> The IupImgLib takes an very long time to compile under Visual 
+	C++. In a 2.5GHz CPU tooks about 5min! (since 3.0)</li>
+	</ul>
+
+<h3>Windows</h3>
+
+<ul>
+
+	<li><span class="style1">Known Issue:</span> In Windows Vista the COMPOSITE=YES attribute of the 
+	IupDialog is not working as expected. There is still flicker when the 
+	dialog is resized. IupTabs in Windows Vista when 
+	COMPOSITE=YES works only if MULTILINE=YES. (since 3.0)</li>
+
+	<li><span class="style1">Known Issue:</span> The MDI Window menu is not properly updated when the child mdi is 
+	closed. (since 3.0)</li>
+	<li><span class="style1">Known Issue:</span> When building with Open Watcom 
+	the 
+	additional controls crash. When you add debug 
+	information to the main IUP library the problem solves. We tried to track down 
+	this error but it does not occurs with debug information and our attempts 
+	without debug does not gives any results. So the IUP main library for Watcom 
+	is now distributed with debug information. (since 3.0) </li>
+
+</ul>
+
+<h3>IupMatrix</h3>
+
+<ul>
+
+  <li>Change the style of the grid lines.</li>
+
+	<li>Use an image as a cell content.</li>
+	<li>Mark using the keyboard.</li>
+	<li>Scroll with position free (not fixed to cell boundaries).</li>
+	<li>Merge cells.</li>
+	<li>Check mark for cells.</li>
+	<li>Other columns/lines fixed at start like column 0 and line 0.</li>
+	<li>Copy&amp;paste from clipboard</li>
+	<li>New PADDINGL:C, TIPL:C and ACTIVEL:C attributes.</li>
+
+</ul>
+
+<h3>IupTree</h3>
+
+<ul>
+
+  <li>Define minimum size based on tree nodes.</li>
+
+	<li>Check mark for nodes.</li>
+	<li>TIP attribute for nodes</li>
+	<li>drag&amp;drop of multiple selecteded nodes.</li>
+	<li>Old NAMEid attribute conflicts with the common attribute NAME. NAMEid 
+	will be removed in future versions. (since 3.0)</li>
+
+  <li>Optimize internal node find from id and vice-versa.</li>
+	<li>Add new nomenclature option for id, for example &quot;:2:1:4&quot;</li>
+	<li>RENAMEEDIT_CB callback and RENAMEMASKid attribute.</li>
+
+</ul>
+
+<h3>IupPPlot</h3>
+<ul>
+  <li>Add support of legend text near each dataset plot.</li>
+  <li>Adjust AutoScale to start and end at major axis 
+  ticks.</li>
+  <li>Improve the display of values near each sample.</li>
+  <li>PPlot force the definitions of the margins. It should have a way to
+  automatic calculate the margins when doing automatic scaling.</li>
+  <li>PPlot has callback mode feature that is not available in IupPPlot.</li>
+  <li>PPlot force the Grid to be automatically spaced following the major ticks.</li>
+  <li><font SIZE="3">PPlot generates lots of warnings on all compilers.</font></li>
+  <li><font SIZE="3">PPlot uses C++ and the STL library. So it may have 
+  portability issues. So far it does not compiles under pure Visual C++ 6 (must 
+	use STL Port). Use of STL 
+  is simple and can be removed.</font></li>
+</ul>
+
+<h3>New Controls</h3>
+
+<ul>
+
+  <li><strong><span class="style2">Priority: </span>DropDownButton</strong> - Mix between a drop down 
+	list and a button</li>
+
+	<li><strong><span class="style2">Priority: </span>ScrollBox</strong> -&nbsp; a box that can scroll the elements inside</li>
+
+  <li><strong><span class="style2">Priority: </span>GridBox </strong>- container to distribute 
+	elements in a grid.</li>
+	<li><strong><span class="style2">Priority: </span>LayoutBuilder</strong> - a dialog that shows the layout of 
+	another dialog and allows the user to reposition the elements interactively.</li>
+	<li class="style3">-----------------------------</li>
+	<li class="style3"><strong>Scrollbar</strong> <span class="style5">- just the scrollbar as a 
+	control.</span><li><strong>CanvasCD</strong> - a IupCanvas with a CD 
+	canvas associated.</li>
+
+	<li><strong>UrlButton</strong> - Button that activates a URL 
+	(looks like a flat label, but gives visual feedback when mouse is hover)</li>
+
+	<li><strong>Toobar -</strong> button/toggle/list, detachable</li>
+
+	<li><strong>ImageList</strong> - A list that contains images</li>
+	<li><strong>Table</strong> - similar to IupMatrix but using 
+	native controls</li>
+	<li>-----------------------------</li>
+
+  <li>Project Manager/Dialog Editor/Integrated Debugger for IupLua</li>
+
+  <li>FontDlg for X fonts - Motif driver</li>
+
+	<li>Expandable/Closeable Frames</li>
+
+	<li>PropertyGrid -&nbsp;a 2 column matrix with expandable/closeable items</li>
+
+	<li>LUT - Lookup Table, maps a set of values in another set using a curve.</li>
+
+  <li>HTML viewer</li>
+
+	<li>Statusbar</li>
+
+	<li>Calendar </li>
+
+</ul>
+
+
+</body>
+</html>
